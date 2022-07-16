@@ -19,10 +19,11 @@ fun main() {
     post3 = post3.copy(text = "Шесть", data = 10)
     WallService.update(post3)
 
-    WallService.printPost()
-
     post4 = post4.copy(text = "Семь", data = 10) // Этот пост не выведется
     WallService.update(post4)
+
+    WallService.printPost()
+
     println(WallService.update(post4))
 
 }
@@ -38,8 +39,7 @@ data class Post(
     val replyPostId: Int = 0,
     val friendsOnly: Boolean = false,
     val comment: Comment,
-    val likes: Likes,
-
+    val likes: Likes
     )
 
 data class Comment(
