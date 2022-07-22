@@ -7,10 +7,10 @@ fun main() {
     var post3 = WallService.add(Post(3, 2, 3, 4, 5, "Три", 7, 8, true, null, Likes(10)))
     var post4 = Post(3, 2, 3, 4, 5, "пост не с этой страницы", 7, 8, true, Comment(), Likes())
 
-    post1.attachment += AudioAttachment("audio", Audio())
-    post1.attachment += AudioAttachment("audio", Audio(1, albumId = 2, artist = "Pety", title = "Song"))
-    post1.attachment += VideoAttachment("video", Video())
-    post1.attachment += PhotoAttachment("photo", Photo())
+    post1.attachment += AudioAttachment(Audio())
+    post1.attachment += AudioAttachment( Audio(1, albumId = 2, artist = "Pety", title = "Song"))
+    post1.attachment += VideoAttachment( Video())
+    post1.attachment += PhotoAttachment(Photo())
 
     WallService.printAttachment(post1)
 

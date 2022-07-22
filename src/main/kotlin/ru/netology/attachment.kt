@@ -2,15 +2,9 @@ package ru.netology
 
 
 
-interface Attachment {
-    val type: String
-}
+sealed class Attachment (val type: String)
 
-data class AudioAttachment(
-    override val type: String,
-    val audio: Audio
-
-) : Attachment
+data class AudioAttachment(val audio: Audio) : Attachment ("audio")
 
 class Audio(
     private val id: Int = 0,
@@ -31,10 +25,7 @@ class Audio(
     }
 }
 
-data class PhotoAttachment(
-    override val type: String,
-    val photo: Photo
-) : Attachment
+data class PhotoAttachment(val photo: Photo) : Attachment ("photo")
 
 class Photo(
     val id: Int = 0,
@@ -55,10 +46,7 @@ data class Sizes(
     val height: Int = 0
 )
 
-data class VideoAttachment(
-    override val type: String,
-    val video: Video
-) : Attachment
+data class VideoAttachment(val video: Video) : Attachment ("video")
 
 class Video(
     val id: Int = 0,
