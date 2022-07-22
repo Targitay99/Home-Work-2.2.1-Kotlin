@@ -1,6 +1,6 @@
 package ru.netology
 
-import java.awt.Image
+
 
 interface Attachment {
     val type: String
@@ -67,5 +67,12 @@ class Video(
     val description: String = "",
     val duration: Int = 0,
     val image: Array<Image> = emptyArray()
+)
+
+data class Image(
+    val height: Int = 0,
+    val url: String = "",
+    val width: Int = 0,
+    val withPadding: Int = 0
 )
 
